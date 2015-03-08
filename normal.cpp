@@ -27,4 +27,12 @@ class Normal {
     n.z = n1.z + n2.z;
     return normalize(n);
   }
+
+  Normal operator-(Normal n1, Normal n2) {
+    Normal n;
+    n.x = n1.x - n2.x;
+    n.y = n1.y - n2.y;
+    n.z = n1.z - n2.z;
+    return normalize(n);
+  }
 }
