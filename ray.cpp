@@ -1,5 +1,5 @@
-struct Ray
+class Ray
 {
-	float start;
-	float direction;
+	Point start;
+	Vector direction;
 };

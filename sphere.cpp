@@ -1,10 +1,13 @@
-struct Sphere
+class Sphere
 {
-	Vector center;
+	Point center;
 	float radius;
+  BRDF f;
 };
 
-struct Triangle
+class Triangle
 {
-	Vector a, b, c;
+	Point a, b, c;
+  Vector normal;
+  BRDF f;
 };
