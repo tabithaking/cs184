@@ -1,12 +1,7 @@
-struct Point
-{
-	float x, y, z;
-};
-
-Point newPoint(float x, float y, float z) {
-	Point p;
-	p.x = x;
-	p.y = y;
-	p.z = z;
-	return p;
+#include "point.h"
+Point::Point (float a, float b, float c) {
+	x = a;
+	y = b;
+	z = c;
 }
+
