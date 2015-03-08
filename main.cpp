@@ -24,7 +24,8 @@ int main(int argc, char const *argv[])
 
 	int count;
 
-	count = 0
+	count = 0;
+	//TEMPORARILY COMMENTED TO AVOID MAKE ERRORS
 	while (count != argc) {
 		switch(argv[count]) {
 			case CAMERA:
@@ -37,7 +38,7 @@ int main(int argc, char const *argv[])
 			case AMB_LIGHT:
 			case MATERIAL:
 			default:
-
+				exit(0); 
 		}
 
 		count += 1;

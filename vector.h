@@ -19,20 +19,24 @@ public:
 	/* Normalize vector V */
 	void normalize();
 
-	/* Multiply V1 by scalar float F */
-	Vector multVector_Scalar(Vector v1, float f);
-
-	/* Multiply V1 and V2, returning V */
-	Vector multVector(Vector v1, Vector v2);
-
-	/* Add vector V1 and V2, returning V */
-	Vector addVector(Vector v1, Vector v2);
-
-	/* Subtract V2 from V1, returning V */
-	Vector subVector(Vector v1, Vector v2);
-
 	/* Returns the dot product of V1 and V2 */
 	float dotProduct(Vector v1, Vector v2);
+
+	/* Multiply vector by scalar float F */
+	Vector operator*(float f);
+
+	/* Multiply vector by v1 returning V */
+	Vector operator*(Vector v1);
+
+	/* Add vector and V1, returning V */
+	Vector operator+(Vector v1);
+
+	/* Subtract v1 from vector, returning V */
+	Vector operator-(Vector v1);
+
+	/* Assigns vector to v */
+	void operator=(Vector v);
+	
 };
 
 #endif

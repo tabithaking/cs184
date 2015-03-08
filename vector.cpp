@@ -28,43 +28,50 @@ void Vector::normalize() {
 	z = z/v_len;
 }
 
-/* Multiply V1 by scalar float F */
-Vector Vector::multVector_Scalar(Vector v1, float f) {
+/* Returns the dot product of V1 and V2 */
+float Vector::dotProduct(Vector v1, Vector v2) {
+	return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
+}
+
+/* Multiply vector by scalar float F */
+Vector Vector::operator*(float f) {
 	Vector v;
-	v.x = v1.x * f;
-	v.y = v1.y * f;
-	v.z = v1.z * f;
+	v.x = this->x * f;
+	v.y = this->y * f;
+	v.z = this->z * f;
 	return v;
 }
 
-		/* Multiply V1 and V2, returning V */
-		Vector Vector::multVector(Vector v1, Vector v2) {
-			Vector v;
-			x = v1.x * v2.x;
-			y = v1.y * v2.y;
-			z = v1.z * v2.z;
-			return v;
-		}
+/* Multiply vector by v1 returning V */
+Vector Vector::operator*(Vector v1) {
+	Vector v;
+	v.x = v1.x * this->x;
+	v.y = v1.y * this->y;
+	v.z = v1.z * this->z;
+	return v;
+}
 
-		/* Add vector V1 and V2, returning V */
-		Vector Vector::addVector(Vector v1, Vector v2) {
-			Vector v; 
-			v.x = v1.x + v2.x;
-			v.y = v1.y + v2.y;
-			v.z = v1.z + v2.z;
-			return v;
-		}
+/* Add vector and V1, returning V */
+Vector Vector::operator+(Vector v1) {
+	Vector v; 
+	v.x = v1.x + this->x;
+	v.y = v1.y + this->y;
+	v.z = v1.z + this->z;
+	return v;
+}
 
-		/* Subtract V2 from V1, returning V */
-		Vector Vector::subVector(Vector v1, Vector v2) {
-			Vector v; 
-			v.x = v1.x - v2.x;
-			v.y = v1.y - v2.y;
-			v.z = v1.z - v2.z;
-			return v;
-		}
+/* Subtract v1 from vector, returning V */
+Vector Vector::operator-(Vector v1) {
+	Vector v; 
+	v.x = this->x - v1.x;
+	v.y = this->y - v1.y;
+	v.z = this->z - v1.z;
+	return v;
+}
 
-		/* Returns the dot product of V1 and V2 */
-		float Vector::dotProduct(Vector v1, Vector v2) {
-			return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
-		}
+/* Assigns vector to v */
+void Vector::operator=(Vector v) {
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
