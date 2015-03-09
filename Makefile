@@ -1,4 +1,4 @@
-OBJS = point.o normal.o color.o vector.o BRDF.o light.o main.o
+OBJS = point.o normal.o color.o vector.o BRDF.o light.o camera.o main.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -24,6 +24,9 @@ BRDF.o: BRDF.h BRDF.cpp
 
 light.o: light.h light.cpp
 	$(CC) $(CFLAGS) light.cpp
+
+camera.o: camera.h camera.cpp
+	$(CC) $(CFLAGS) camera.cpp
 
 main.o: point.o vector.o main.cpp
 	$(CC) $(CFLAGS) main.cpp
