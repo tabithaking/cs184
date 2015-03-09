@@ -1,4 +1,4 @@
-OBJS = point.o vector.o main.o
+OBJS = point.o normal.o color.o vector.o BRDF.o light.o main.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)

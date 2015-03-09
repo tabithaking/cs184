@@ -1,11 +1,14 @@
 #include "color.h"
 
 Color::Color(float r, float g, float b) {
-  Color c;
-  c.r = r;
-  c.g = g;
-  c.b = b;
-  return c;
+  this->r = r;
+  this->g = g;
+  this->b = b;
+}
+Color::Color() {
+  this->r = 0;
+  this->g = 0;
+  this->b = 0;
 }
 
 /* Compute the dot product between c1 and c2 */
@@ -15,33 +18,24 @@ float Color::dotProduct(Color c1, Color c2) {
 
 /* Add color with c1 */
 Color Color::operator+(Color c1) {
-  Color c;
-  c.r = this->r + c1.r;
-  c.g = this->g + c1.g;
-  c.b = this->b + c1.b;
+  Color c = Color(this->r + c1.r, this->g + c1.g, this->b + c1.b);
   return c;
 } 
 
 /* Multiply color by scalar f*/
 Color Color::operator*(float f) {
-  Color c;
-  c.r = this->r * f;
-  c.g = this->g * f;
-  c.b = this->b * f;
+  Color c = Color(this->r * f, this->g * f, this->b * f);
   return c;
 }
 
 /* Multiply color by other color */
-Color::operator*(Color c1) {
-  Color c;
-  c.x = this->r * c1.r;
-  c.y = this->g * c1.g;
-  c.z = this->b * c1.b;
-  return c;™
+Color Color::operator*(Color c1) {
+  Color c = Color(this->r * c1.r, this->g * c1.g, this->b * c1.b);
+  return c;
 }
 
 /* Assign color to c1 */
-Color operator=(Color c1) {
+void Color::operator=(Color c1) {
   this->r = c1.r;
   this->g = c1.g;
   this->b = c1.b;

@@ -1,44 +1,24 @@
 #include "math.h"
 #include "normal.h"
 
-/* Normalize normal */
-Normal Normal::normalize(Normal n) {
-  if (n.x == 0 && n.y == 0 && n.z == 0) {
-    return n;
-  }
-  Normal  n2;
-  float length = sqrt(pow(n.x,2)+pow(n.y,2)+pow(n.z,2));
-  n2.x = n.x/length;
-  n2.y = n.y/length;
-  n2.z = n.z/length;
-  return n2;
-}
-
 /* Init normal */
-Normal Normal::Normal(float x, float y, float z) {
-  Normal n;
-  n.x = x;
-  n.y = y;
-  n.z = z;
-  return normalize(n);
+Normal::Normal(float x, float y, float z) {
+  float length = sqrt(pow(x,2)+pow(y,2)+pow(z,2));
+  this->x = x/length;
+  this->y = y/length;
+  this->z = z/length;
 }
 
 /* Add two normals */
 Normal Normal::operator+(Normal n1) {
-  Normal n;
-  n.x = this->x + n1.x;
-  n.y = this->y + n1.y;
-  n.z = this->z + n1.z;
-  return normalize(n);
+  Normal n(this->x + n1.x, this->y + n1.y, this->z + n1.z);
+  return n;
 }
 
 /* Subtract two normals */
 Normal Normal::operator-(Normal n1) {
-  Normal n;
-  n.x = this->x - n1.x;
-  n.y = this->y - n1.y;
-  n.z = this->z - n1.z;
-  return normalize(n);
+  Normal n(this->x - n1.x, this->y - n1.y, this->z - n1.z);
+  return n;
 }
 
 /* Assign normal */

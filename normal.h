@@ -4,9 +4,6 @@
 class Normal {
   float x, y, z;
 
-  /* Normalize normal */
-  Normal normalize(Normal n);
-
   /* Init normal */
   Normal(float x, float y, float z);
 
@@ -17,7 +14,7 @@ class Normal {
   Normal operator-(Normal n1);
 
   /* Assign normal */
-  void operator=(normal n);
+  void operator=(Normal n);
 };
 
 #endif

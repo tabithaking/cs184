@@ -6,6 +6,7 @@ class Color
   public:
     float r,g,b;
     Color(float r, float g, float b);
+    Color();
 
     /* Compute the dot product between c1 and c2 */
     float dotProduct(Color c1, Color c2);
@@ -20,7 +21,7 @@ class Color
     Color operator*(Color c1);
 
     /* Assign color to c1 */
-    Color operator=(Color c1);
+    void operator=(Color c1);
 };
 
 #endif

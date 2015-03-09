@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 	int count;
 
 	count = 0;
-	//TEMPORARILY COMMENTED TO AVOID MAKE ERRORS
+	//TEMPORARILY COMMENT TO AVOID MAKE ERRORS
 	while (count != argc) {
 		switch(argv[count]) {
 			case CAMERA:
