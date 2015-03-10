@@ -1,4 +1,4 @@
-OBJS = point.o normal.o color.o vector.o BRDF.o light.o camera.o main.o
+OBJS = point.o normal.o color.o vector.o BRDF.o light.o camera.o matrix.o main.o tests.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -28,8 +28,18 @@ light.o: light.h light.cpp
 camera.o: camera.h camera.cpp
 	$(CC) $(CFLAGS) camera.cpp
 
+matrix.o: matrix.h matrix.cpp
+	$(CC) $(CFLAGS) matrix.cpp
+
+tests.o: tests.cpp
+	$(CC) $(CFLAGS) tests.cpp
+
 main.o: point.o vector.o main.cpp
 	$(CC) $(CFLAGS) main.cpp
+
+check:
+	make
+	./main test
 
 clean:
 	\rm *.o 

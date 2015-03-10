@@ -29,8 +29,8 @@ void Vector::normalize() {
 }
 
 /* Returns the dot product of V1 and V2 */
-float Vector::dotProduct(Vector v1, Vector v2) {
-	return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
+float Vector::dotProduct(Vector v1) {
+	return this->x*v1.x + this->y*v1.y + this->z*v1.z;
 }
 
 /* Multiply vector by scalar float F */
@@ -39,15 +39,6 @@ Vector Vector::operator*(float f) {
 	v.x = this->x * f;
 	v.y = this->y * f;
 	v.z = this->z * f;
-	return v;
-}
-
-/* Multiply vector by v1 returning V */
-Vector Vector::operator*(Vector v1) {
-	Vector v;
-	v.x = v1.x * this->x;
-	v.y = v1.y * this->y;
-	v.z = v1.z * this->z;
 	return v;
 }
 

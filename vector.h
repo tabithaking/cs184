@@ -19,14 +19,11 @@ public:
 	/* Normalize vector V */
 	void normalize();
 
-	/* Returns the dot product of V1 and V2 */
-	float dotProduct(Vector v1, Vector v2);
+	/* Returns the dot product of the vector V1 */
+	float dotProduct(Vector v1);
 
 	/* Multiply vector by scalar float F */
 	Vector operator*(float f);
-
-	/* Multiply vector by v1 returning V */
-	Vector operator*(Vector v1);
 
 	/* Add vector and V1, returning V */
 	Vector operator+(Vector v1);

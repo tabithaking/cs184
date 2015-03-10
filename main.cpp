@@ -1,10 +1,13 @@
 #include <string>
+#include <iostream>
 
 #include "point.h"
 #include "color.h"
 #include "vector.h"
 #include "camera.h"
 #include "light.h"
+#include "matrix.h"
+#include "tests.h"
 
 
 #define CAMERA "cam"
@@ -29,7 +32,11 @@ int main(int argc, char const *argv[])
 	count = 0;
 	//TEMPORARILY COMMENT TO AVOID MAKE ERRORS
 	while (count != argc) {
-		if (strcmp(argv[count], CAMERA) == 0) {
+		if (strcmp(argv[count], "test") == 0) {
+			Tests t = Tests();
+			t.checkAll();
+			exit(0);
+		} else if (strcmp(argv[count], CAMERA) == 0) {
 			Point eye = Point(std::stof(argv[count + 1]), std::stof(argv[count + 2]), std::stof(argv[count + 3]));
 			count += 3;
 			Point ll = Point(std::stof(argv[count + 1]), std::stof(argv[count + 2]), std::stof(argv[count + 3]));
@@ -70,11 +77,17 @@ int main(int argc, char const *argv[])
 		} else if (strcmp(argv[count], MATERIAL) == 0) {
 			
 		} else if (strcmp(argv[count], TRANSLATE) == 0) {
-			
+			Matrix trans = Matrix(std::stof(argv[count + 1]), std::stof(argv[count + 2]), std::stof(argv[count + 3]), 1);
+			// PUT THIS MATRIX INTO SOME SORT OF LIST
+			count += 3;
 		} else if (strcmp(argv[count], ROTATE) == 0) {
-			
+			Matrix rot = Matrix(std::stof(argv[count + 1]), std::stof(argv[count + 2]), std::stof(argv[count + 3]), 2);
+			// PUT THIS MATRIX INTO SOME SORT OF LIST
+			count += 3;
 		} else if (strcmp(argv[count], SCALE) == 0) {
-			
+			Matrix scale = Matrix(std::stof(argv[count + 1]), std::stof(argv[count + 2]), std::stof(argv[count + 3]), 3);
+			// PUT THIS MATRIX INTO SOME SORT OF LIST
+			count += 3;
 		}
 		count += 1;
 	}

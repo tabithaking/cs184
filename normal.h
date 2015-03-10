@@ -2,6 +2,7 @@
 #define NORMAL_H
 
 class Normal {
+public:
   float x, y, z;
 
   /* Init normal */
