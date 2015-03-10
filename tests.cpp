@@ -114,3 +114,7 @@ int Tests::normal() {
 
   return pass;
 };
+
+int Tests::color() {
+
+};

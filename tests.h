@@ -7,6 +7,7 @@ public:
   void checkAll();
   int vector();
   int normal();
+  int color();
 
 };
 
