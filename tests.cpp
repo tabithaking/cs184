@@ -55,9 +55,15 @@ int Tests::vector() {
     std::cout << "\n\tVector normalize\n";
   }
 
-  if (a.dotProduct(d) != 11.0) {
+  if (a.dot(d) != 11.0) {
     pass = 0;
     std::cout << "\n\tVector dot product\n";
+  }
+
+  temp = a.cross(d);
+  if (temp.x != 1.0 || temp.y != 7.0 || temp.z != -5.0) {
+    pass = 0;
+    std::cout << "\n\tVector cross product\n";
   }
 
   temp = a * 2.0;

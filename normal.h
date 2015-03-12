@@ -7,6 +7,7 @@ public:
 
   /* Init normal */
   Normal(float x, float y, float z);
+  Normal();
 
   /* Add two normals */
   Normal operator+(Normal n1);

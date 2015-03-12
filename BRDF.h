@@ -7,6 +7,7 @@ class BRDF {
 
   public:
     BRDF(Color a, Color d, Color s, Color r);
+    BRDF();
 };
 
 #endif

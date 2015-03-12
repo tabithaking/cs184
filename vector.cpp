@@ -29,8 +29,16 @@ void Vector::normalize() {
 }
 
 /* Returns the dot product of V1 and V2 */
-float Vector::dotProduct(Vector v1) {
+float Vector::dot(Vector v1) {
 	return this->x*v1.x + this->y*v1.y + this->z*v1.z;
+}
+
+/* Returns the cross product of V1 and V2 */
+Vector Vector::cross(Vector v1) {
+	float a = this->y * v1.z - this->z * v1.y;
+	float b = this->z * v1.x - this->x * v1.z;
+	float c = this->x * v1.y - this->y * v1.x;
+	return Vector(a, b, c);
 }
 
 /* Multiply vector by scalar float F */

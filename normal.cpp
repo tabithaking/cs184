@@ -12,6 +12,12 @@ Normal::Normal(float x, float y, float z) {
   this->z = z/length;
 }
 
+Normal::Normal() {
+  this->x = 1.0;
+  this->y = 0.0;
+  this->z = 0.0;
+}
+
 /* Add two normals */
 Normal Normal::operator+(Normal n1) {
   Normal n(this->x + n1.x, this->y + n1.y, this->z + n1.z);

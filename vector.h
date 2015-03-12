@@ -20,7 +20,10 @@ public:
 	void normalize();
 
 	/* Returns the dot product of the vector V1 */
-	float dotProduct(Vector v1);
+	float dot(Vector v1);
+
+	/* Returns the cross product of the vector V1 */
+	Vector cross(Vector v1);
 
 	/* Multiply vector by scalar float F */
 	Vector operator*(float f);
