@@ -15,9 +15,6 @@ class Shape {
 
 public: 
   Shape(Point center, float radius, Point a, Point b, Point c, BRDF f, int type);
-  // Shape Sphere(Point center, float radius, BRDF f);
-  // Shape Triangle(Point a, Point b, Point c, BRDF f);
-
 };
 
 #endif
